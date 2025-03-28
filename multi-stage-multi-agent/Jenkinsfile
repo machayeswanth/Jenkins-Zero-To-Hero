@@ -7,6 +7,9 @@ pipeline {
       }
       steps {
         sh 'mvn --version'
+        sh 'wget -O HelloWorld.java https://raw.githubusercontent.com/machayeswanth/Jenkins-Zero-To-Hero/main/multi-stage-multi-agent/helloworld.java'
+        sh 'javac HelloWorld.java'
+        sh 'java HelloWorld'
       }
     }
     stage('Front-end') {
